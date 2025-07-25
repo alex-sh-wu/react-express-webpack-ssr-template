@@ -4,13 +4,16 @@
   "description": "A minimal code template for any React SSR apps using Webpack and Express.js",
   "main": "server.js",
   "scripts": {
-    "start": "node -r @babel/register server.js",
+    "build": "npm run clean && npm run prod:build:client && npm run prod:build:server",
+    "start": "node build/server.bundle.js",
     "dev": "npm run clean && concurrently \"npm run dev:build:client -- --watch\" \"npm run dev:build:server -- --watch\" \"npm run dev:server\" \"npm run open\"",
     "clean": "rimraf build",
     "open": "wait-on http://localhost:3000 && start http://localhost:3000",
     "dev:build:client": "webpack --config webpack.config.js --mode development",
     "dev:build:server": "webpack --config webpack.server.js --mode development",
-    "dev:server": "wait-on ./build/server.bundle.js && nodemon ./build/server.bundle.js"
+    "dev:server": "wait-on ./build/server.bundle.js && nodemon ./build/server.bundle.js",
+    "prod:build:client": "webpack --config webpack.config.js --mode production",
+    "prod:build:server": "webpack --config webpack.server.js --mode production"
   },
   "dependencies": {
     "concurrently": "^9.2.0",
