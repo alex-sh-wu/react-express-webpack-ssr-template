@@ -3,7 +3,7 @@ const sharedConfig = require('./webpack.shared.js');
 
 module.exports = {
     target: 'node',
-    entry: './server.js',
+    entry: './src/server.js',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'server.bundle.js',

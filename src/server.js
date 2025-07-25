@@ -4,7 +4,7 @@ const ReactDOMServer = require('react-dom/server');
 const { StaticRouter } = require('react-router-dom');
 
 // Import the main App component
-const App = require('./src/ui/App').default;
+const App = require('./ui/App').default;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
