@@ -1,0 +1,34 @@
+{
+  "name": "react-express-ssr-template",
+  "version": "1.0.0",
+  "description": "A minimal code template for any React SSR apps using Webpack and Express.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node -r @babel/register server.js",
+    "dev": "npm run clean && concurrently \"npm run dev:build:client -- --watch\" \"npm run dev:build:server -- --watch\" \"npm run dev:server\" \"npm run open\"",
+    "clean": "rimraf build",
+    "open": "wait-on http://localhost:3000 && start http://localhost:3000",
+    "dev:build:client": "webpack --config webpack.config.js --mode development",
+    "dev:build:server": "webpack --config webpack.server.js --mode development",
+    "dev:server": "wait-on ./build/server.bundle.js && nodemon ./build/server.bundle.js"
+  },
+  "dependencies": {
+    "concurrently": "^9.2.0",
+    "express": "^4.18.0",
+    "nodemon": "^3.1.10",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.7.1",
+    "rimraf": "^6.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.24.0",
+    "@babel/register": "^7.24.0",
+    "babel-loader": "^10.0.0",
+    "wait-on": "^8.0.4",
+    "webpack": "^5.100.2",
+    "webpack-cli": "^6.0.1"
+  }
+}
