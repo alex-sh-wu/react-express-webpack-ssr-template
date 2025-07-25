@@ -1,4 +1,6 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
 
 const App = () => {
   return (
@@ -10,10 +12,9 @@ const App = () => {
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
-        <main>
-          <h1>Hello from React 19 SSR!</h1>
-          <p>This page was rendered on the server using Express.js and React 19.</p>
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </body>
     </html>
   );
