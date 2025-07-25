@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
+import ClientSideDemo from './pages/ClientSideDemo/ClientSideDemo';
 import './App.css';
 
 const App = () => {
@@ -15,6 +16,8 @@ const App = () => {
       <body>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/cs-demo" element={<ClientSideDemo />} />
+          {/* Add more routes as needed */}
         </Routes>
       </body>
     </html>
