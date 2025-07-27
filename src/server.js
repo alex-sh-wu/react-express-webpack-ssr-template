@@ -2,6 +2,7 @@ const express = require('express');
 const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const { StaticRouter } = require('react-router-dom');
+const { exampleRouter } = require('./routes/exampleRouter');
 
 // Import the main App component
 const App = require('./ui/App').default;
@@ -11,6 +12,9 @@ const PORT = process.env.PORT || 3000;
 
 // Serve static files (if any)
 app.use(express.static('build'));
+
+// add api routes
+app.use('/api', exampleRouter);
 
 app.get('*', (req, res) => {
   const { pipe, abort} = ReactDOMServer.renderToPipeableStream(

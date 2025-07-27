@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import ClientSideExample from './pages/ClientSideExample/ClientSideExample';
+import ApiCallExample from './pages/ApiCallExample/ApiCallExample';
 import './App.css';
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cs-example" element={<ClientSideExample />} />
+          <Route path="/api-example" element={<ApiCallExample />} />
           {/* Add more routes as needed */}
         </Routes>
       </body>
