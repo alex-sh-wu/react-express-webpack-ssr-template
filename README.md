@@ -10,15 +10,23 @@ This is a minimal server-side rendering (SSR) template using React 19 and Expres
    ```
 2. Start the server:
    ```sh
-   npm start
+   npm run dev
    ```
-3. Open your browser at [http://localhost:3000](http://localhost:3000)
+3. Your browser will automatically open at [http://localhost:3000](http://localhost:3000) once it is ready!
+
+## Building for production
+```sh
+# bundle all the necessary files in the build directory
+npm run build
+# start the server
+npm run start
+```
 
 ## Project Structure
-- `server.js` – Express server entry point
+- `src/server.js` – Express server entry point for webpack
+- `src/client.js` – Client-side entry point for webpack (needed for hydration)
 - `src/App.jsx` – Main React component rendered on the server
-- `.babelrc` – Babel config for JSX/ESNext support
 
 ## Notes
 - This template renders a simple React component to HTML on the server.
-- You can add more components and routes as needed.
+- You can add components and pages to `src/ui` as needed.
