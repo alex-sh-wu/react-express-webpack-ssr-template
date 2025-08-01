@@ -10,8 +10,8 @@ const App = require('./ui/App').default;
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files (if any)
-app.use(express.static('build'));
+// Serve only client assets from build/public (not server.bundle.js)
+app.use(express.static('build/public'));
 
 // add api routes
 app.use('/api', exampleRouter);

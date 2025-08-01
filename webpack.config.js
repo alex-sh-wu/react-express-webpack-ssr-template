@@ -5,7 +5,7 @@ module.exports = {
     target: 'web',
     entry: './src/client.js',
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'build/public'),
         filename: 'client.js',
     },
     ...sharedConfig,
